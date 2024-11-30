@@ -1,6 +1,5 @@
 import React from "react";
 import { Menus, SubMenus } from "./contents";
-import ListCard from "./list_card";
 
 interface MegaMenuProps {
   menu: Menus;

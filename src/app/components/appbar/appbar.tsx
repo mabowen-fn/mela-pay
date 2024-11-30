@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import MegaMenu from "./mega_menu";
 import { menus } from "./contents";
-import ListCard from "./list_card";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 
 function Header() {
@@ -63,7 +62,7 @@ function Header() {
             <div
               className={`${
                 selectedMenuIndex != null ? "group-hover:block" : "hidden"
-              } group z-50  absolute top-24 t-24 left-0 w-full shadow-md p-4`}
+              } group z-50  absolute top-24 t-24 left-0 w-full shadow-md p-4 bg-white`}
             >
               {selectedMenuIndex != null && (
                 <MegaMenu menu={menus[selectedMenuIndex]} />
@@ -88,7 +87,10 @@ function Header() {
           <ul>
             {menus.map((menu, index) => (
               <li>
-                <ListCard menus={menu} />
+                <div className="p-4 shadow-sm">
+                  <h2 className="text-lg font-bold">{menu.name}</h2>
+                  <h2 className="text-sm font-light">{menu.description}</h2>
+                </div>
               </li>
             ))}
           </ul>
